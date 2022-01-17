@@ -141,6 +141,13 @@ blocks:
             - pip install poetry
             - poetry install
             - poetry run mypy apps
+        - name: test export using shell script
+            - sem-version python 3.8
+            - checkout
+            - cache restore
+            - pip install poetry
+            - poetry install
+            - ./scripts/exportAllYamlCourses.sh
   - name: PyPi readme
     dependencies: []
     task:
